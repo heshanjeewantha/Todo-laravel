@@ -2,8 +2,21 @@
 
 @section('content')
 <div class="container">
-    <h1>Welcome to the Todo App</h1>
-    <p>This is the home page. You can manage your todos from here.</p>
-    <a href="{{ route('todo') }}" class="btn btn-primary">Go to Todos</a>
+    <div class="row">
+         <div class="col-lg-12 text-center">
+            <h1 class="page-title">Home<home>
+         </div>
+    </div>
 </div>
 @endsection
+
+
+@push('css')
+<style>
+    .page-title {
+        padding-top: 10vh;
+        font-size: 3.5rem;
+        color: #4b85bf;
+    }
+</style>
+@endpush
