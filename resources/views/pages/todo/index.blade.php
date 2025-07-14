@@ -30,21 +30,22 @@
                                 <td>{{ $task->id }}</td>
                                 <td>{{ $task->title }}</td>
                                 <td>{{ $task->done }}</td>
-                                <td class="d-flex gap-2">
-                                    <form action="" method="POST" class="me-2">
-                                        @csrf
-                                        @method('PUT')
-                                        
-                                        <button type="submit" class="btn btn-primary btn-sm">
-                                            update
-                                        </button>
-                                    </form>
-                                    <form action="" method="POST">
+                                
+                                <td>
+                                    <a href="{{ route('todo.update', $task->id) }}" class="btn btn-primary btn-sm">
+                                        Update
+                                    </a>
+                                </td>
+                                <td>
+                                    <form action="{{ route('todo.delete', $task->id) }}" method="POST" style="display:inline;">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                        <button type="submit" class="btn btn-danger btn-sm">
+                                            Delete
+                                        </button>
                                     </form>
                                 </td>
+                                
                             </tr>
                         @endforeach
                     </tbody>

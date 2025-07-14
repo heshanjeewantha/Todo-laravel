@@ -23,4 +23,18 @@ class TodoController extends Controller
         $this->task->create($request->all());
         return redirect()->route('todo')->with('success', 'Todo created successfully!');
     }
+
+    public function update(Request $request, $id)
+    {
+        $task = $this->task->findOrFail($id);
+        $task->update($request->all());
+        return redirect()->route('todo')->with('success', 'Todo updated successfully!');
+    }
+
+    public function delete($id)
+    {
+        $task = $this->task->findOrFail($id);
+        $task->delete();
+        return redirect()->route('todo')->with('success', 'Todo deleted successfully!');
+    }
 }
