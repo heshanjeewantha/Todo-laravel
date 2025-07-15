@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Items List</title>
-</head>
-<body>
+@extends('layouts.app')
+@section('content')
+  <div class="container">
     <h1>Items List</h1>
     <a href="{{ route('items.create') }}">Create New Item</a>
 
@@ -39,5 +36,5 @@
             @endforelse
         </tbody>
     </table>
-</body>
-</html>
+</div>
+@endsection
